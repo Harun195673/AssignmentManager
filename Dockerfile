@@ -17,4 +17,4 @@ RUN ./mvnw clean package -DskipTests
 EXPOSE 8080
 
 # Start the Spring Boot app
-CMD ["java", "-jar", "target/AssignmentManager-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "target/first-0.0.1-SNAPSHOT.jar"]
