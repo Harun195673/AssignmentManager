@@ -9,6 +9,7 @@ import com.harun.assignmentmanager.Entity.Course;
 import com.harun.assignmentmanager.Service.AssignmentService;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -37,28 +38,32 @@ public class AssignmentController {
 
     /// READ
     @GetMapping
-    public Page<AssignmentResponseDTO> getAllAssignments(Pageable pageable) {
-        return assignmentService.getAllAssignments(pageable);
-    }
-
-    @GetMapping("/overdue")
-    public List<AssignmentResponseDTO> getOverdueAssignments() {
-        return assignmentService.getOverdueAssignments();
+    public Page<AssignmentResponseDTO> getAllAssignments(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size
+    ) {
+        return assignmentService.getAllAssignments(PageRequest.of(page, size));
     }
 
     @GetMapping("/overduePageable")
-    public Page<AssignmentResponseDTO> getOverdueAssignments(Pageable pageable) {
-        return assignmentService.getOverdueAssignments(pageable);
+    public Page<AssignmentResponseDTO> getOverdueAssignments(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size
+    ) {
+        return assignmentService.getOverdueAssignments(PageRequest.of(page, size));
     }
 
 
     @GetMapping("/status/{status}")
     public Page<AssignmentResponseDTO> getAssignmentsByStatus(
             @PathVariable Assignment.Status status,
-            Pageable pageable) {
-
-        return assignmentService.getAssignmentsByStatus(status, pageable);
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size
+    ) {
+        return assignmentService.getAssignmentsByStatus(status, PageRequest.of(page, size));
     }
+
+
 
     @GetMapping("/{assignmentId}")
     public AssignmentResponseDTO getAssignmentById(@PathVariable Long assignmentId) {
