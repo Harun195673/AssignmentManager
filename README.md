@@ -32,10 +32,11 @@ Built with layered architecture, DTO mapping, JPA relationships, pagination, fil
 
 ## Live Demo
 
-### Assignments Endpoint
-[https://assignmentmanager-7qta.onrender.com/assignments](https://assignmentmanager-7qta.onrender.com/swagger-ui/index.html)
+### Swagger API Documentation
+[Swagger UI](https://assignmentmanager-7qta.onrender.com/swagger-ui/index.html)
 
-Returns all assignments in JSON format.
+### Assignments Endpoint
+[Assignments JSON Endpoint](https://assignmentmanager-7qta.onrender.com/assignments)
 
 ---
 
