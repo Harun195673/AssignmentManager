@@ -59,12 +59,3 @@ Built with layered architecture, DTO mapping, JPA relationships, pagination, fil
 - `DONE`
 - `OVERDUE`
 
----
-
-## Run Locally
-
-### Clone Repository
-
-```bash
-git clone <your-github-repo-url>
-cd <repo-folder>
