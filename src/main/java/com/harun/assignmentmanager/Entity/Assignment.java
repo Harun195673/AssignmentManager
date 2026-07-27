@@ -36,7 +36,4 @@ public class Assignment {
     private Course course;
 
 
-    private  int aaa;
-
-
 }

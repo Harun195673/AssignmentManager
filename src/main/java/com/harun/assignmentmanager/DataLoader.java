@@ -49,7 +49,8 @@ public class DataLoader {
                             "Build REST API",
                             LocalDate.now().plusDays(5),
                             Assignment.Status.IN_PROGRESS,
-                            springCourse
+                            springCourse,
+
                     )
             );
 
